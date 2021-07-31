@@ -1,8 +1,15 @@
 body {
-    background-color: #B14AED;
+    background-color: #F7996E;
 }
 
-h1 {
-    color: #F7996E;
-    font-family: Arial, Helvetica, sans-serif;
+/*Give anything a border (class)*/
+.border {
+    border: 5px solid #B14AED;
+}
+
+/*Made the div display in a row instead of in a column*/
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
