@@ -1,1 +1,2 @@
-<iframe src="http://brython.info/console.html" width="800" height="400"></iframe>
+let d = new Date();
+document.body.innerHTML = "<h1>Today's date is " + d + "</h1>"
