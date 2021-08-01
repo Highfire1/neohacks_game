@@ -1,5 +1,9 @@
+*{
+  font-family: 'Gowun Batang', serif;
+}
 body {
     background-color: #F7996E;
+    color:#2F242C;
 }
 
 /*Give anything a border (class)*/
@@ -12,4 +16,12 @@ body {
     display:flex;
     justify-content:center;
     align-items:center;
+}
+
+/*Ingredients style*/
+#ingreds{
+  width:600px;
+  height:550px;
+  background-color:#B14AED;
+  text-align:center;
 }
