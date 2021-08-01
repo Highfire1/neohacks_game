@@ -47,7 +47,12 @@ function lookForRecipe(cauldron_array) {
             console.log("recipe detected!")
 
             // add more infrastructure + graphics here once they exist
+            
+            // empty the cauldron
+            cauldron = []
+            // add the recipe item
             items[key].count += 1
+
             return key;
         }
     }
@@ -59,6 +64,7 @@ function addToCauldron(item) {
         throw "in addToCauldron, item " + item + " does not exist!"
     }
 
+    console.log(items[item].name + " added to cauldron!")
     cauldron.push(items[item])
 
     lookForRecipe(cauldron)

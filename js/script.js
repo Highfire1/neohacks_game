@@ -3,5 +3,5 @@
 // addToCauldron(items.eyeOfNewt)
 // lookForRecipe(cauldron);
 
-// setup cauldron object
-let cauldron = {}
+// setup cauldron array
+let cauldron = []
