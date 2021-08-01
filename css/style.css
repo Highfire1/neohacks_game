@@ -92,3 +92,7 @@ a:link,a:visited{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+dialog{
+  width:600px;
+}
