@@ -13,3 +13,9 @@ let cauldron = []
 // mode 4 = end
 let mode = 0
 
+
+var audio = new Audio('assets/possession.mp3');
+
+// chrome won't let this play until the user clicks anything
+// audio.play();
+
