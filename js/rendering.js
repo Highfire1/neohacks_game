@@ -5,6 +5,7 @@ function displayItem(item) {
     }
 
     // create image
+    // possible we may need to resize the image here
     const imgnode = document.createElement("img");
     imgnode.src = items[item].image
 
