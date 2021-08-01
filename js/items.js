@@ -26,7 +26,7 @@ let items = {
     
     "eagleTalons" : {
         name : "Talons of Eagle",
-        image : "eagletalons.png",
+        image : "eagletalons.jpg",
         count : 0,
     },
     
@@ -38,13 +38,13 @@ let items = {
     
     "mushroom" : {
         name : "Mushrooms",
-        image : "mushroom.png",
+        image : "mushroom.jpg",
         count : 0,
     },
     
     "nightlock" : {
         name : "Berries of Nightlock",
-        image : "nightlock.png",
+        image : "nightlock.jpg",
         count : 0,
     },
     
@@ -56,13 +56,13 @@ let items = {
     
     "tardash" : {
         name : "Dash of Tar",
-        image : "tardrop.png",
+        image : "tardrop.jpg",
         count : 0,
     },
     
     "addertongue" : {
         name : "Tongue of Adder",
-        image : "tongueofadder.png",
+        image : "tongueofadder.jpg",
         count : 0,
     },
     
@@ -114,6 +114,8 @@ function lookForRecipe(cauldron_array) {
 
 // wrapper function to check for recipes
 function addToCauldron(item) {
+    console.log(items[item])
+    console.log(items)
     if (typeof items[item] == "undefined") {
         throw "in addToCauldron, item " + item + " does not exist!"
     }

@@ -16,8 +16,8 @@ function displayItem(item) {
 
     // this needs some work
     // also, <img src="assets/batwing.png" alt="Snow" style="width:100%;">
-    imgnode.style.width = "10%"
-    imgnode.style.height = "10%"
+    imgnode.style.width = "100%"
+    imgnode.style.height = "100%"
 
     const txtnode = document.createElement("bottom-right")
     txtnode.textContent = items[item].count
