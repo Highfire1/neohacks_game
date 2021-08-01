@@ -8,9 +8,11 @@ function displayItem(item) {
     // create image
     const imgnode = document.createElement("img")
     imgnode.src = "assets/" + items[item].image
+    imgnode.alt = items[item].name
 
     // adds listener to button so it calls addToCauldron when its clicked
     imgnode.addEventListener("click", function(){addToCauldron(item)} )
+    
 
     // this needs some work
     // also, <img src="assets/batwing.png" alt="Snow" style="width:100%;">

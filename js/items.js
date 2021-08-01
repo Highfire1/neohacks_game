@@ -5,17 +5,71 @@
 // cauldron stores everything in the cauldron
 
 let items = {
-
-    "eyeOfNewt" : {
-        name : "Eye of Newt",
-        image : "newteye.png",
+    
+    "catHair" : {
+        name : "Hair of Cat",
+        image : "cathair.png",
         count : 0,
     },
-
-    "batWing" : {
-        name : "Wing of Bat",
-        image : "batwing.png",
+    
+    "crowFeather" : {
+        name : "Feather of Crow",
+        image : "crowfeather.png",
         count : 0
+    },
+    
+    "daisy" : {
+        name : "Daisy",
+        image : "daisy.png",
+        count : 0,
+    },
+    
+    "eagleTalons" : {
+        name : "Talons of Eagle",
+        image : "eagletalons.png",
+        count : 0,
+    },
+    
+    "newtEye" : {
+        name : "Eye of Newt",
+        image : "eyeofnewt.png",
+        count : 0,
+    },
+    
+    "mushroom" : {
+        name : "Mushrooms",
+        image : "mushroom.png",
+        count : 0,
+    },
+    
+    "nightlock" : {
+        name : "Berries of Nightlock",
+        image : "nightlock.png",
+        count : 0,
+    },
+    
+    "phoenixtear" : {
+        name : "Tear of Phoenix",
+        image : "phoenixtear.png",
+        count : 0,
+    },
+    
+    "tardash" : {
+        name : "Dash of Tar",
+        image : "tardrop.png",
+        count : 0,
+    },
+    
+    "addertongue" : {
+        name : "Tongue of Adder",
+        image : "tongueofadder.png",
+        count : 0,
+    },
+    
+    "waterdrop" : {
+        name : "Drop of Water",
+        image : "waterdrop.png",
+        count : 0,
     },
 
     "magicFuel" : {
@@ -29,7 +83,7 @@ let items = {
   };
 
 let recipes = {
-    "magicFuel" : [items.eyeOfNewt, items.batWing]
+    "magicFuel" : [items.eyeOfNewt, items.crowFeather]
 }
 
 // used to check if recipes exist in the cauldron
