@@ -1,3 +1,9 @@
+// There are 3 important pieces of data
+
+// items stores information on all items and their count
+// recipes stores all the recipes
+// cauldron stores everything in the cauldron
+
 let items = {
 
     "eyeOfNewt" : {
@@ -53,9 +59,9 @@ function addToCauldron(item) {
         throw "in addToCauldron, item " + item + " does not exist!"
     }
 
-    cauldron.push(items[item]);
+    cauldron.push(items[item])
 
-    lookForRecipe(cauldron);
+    lookForRecipe(cauldron)
 }
 
 
@@ -64,5 +70,5 @@ function addToCauldron(item) {
 function arraysEqual(a, b) {
     //console.log(JSON.stringify(a))
     //console.log(JSON.stringify(b))
-    return JSON.stringify(a) === JSON.stringify(b);
+    return JSON.stringify(a) === JSON.stringify(b)
   }
