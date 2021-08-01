@@ -25,3 +25,19 @@ body {
   background-color:#B14AED;
   text-align:center;
 }
+
+
+/* Below from https://www.w3schools.com/howto/howto_css_image_text.asp */
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}

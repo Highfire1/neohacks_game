@@ -9,19 +9,23 @@ function displayItem(item) {
     const imgnode = document.createElement("img")
     imgnode.src = "assets/" + items[item].image
 
-    // this needs some work, 
-    imgnode.style.width = "50%"
-    imgnode.style.height = "10%"
-
-    //create button
-    const buttonnode = document.createElement("button")
-    buttonnode.innerHTML = "Add to cauldron"
     // adds listener to button so it calls addToCauldron when its clicked
-    buttonnode.addEventListener("click", function(){addToCauldron(item)} )
+    imgnode.addEventListener("click", function(){addToCauldron(item)} )
+
+    const txtnode = document.createElement("bottom-right")
+    txtnode.textContent = items[item].count
+
+    items[item].txtnode = txtnode
+
+
+    // this needs some work
+    // also, <img src="assets/batwing.png" alt="Snow" style="width:100%;">
+    imgnode.style.width = "10%"
+    imgnode.style.height = "10%"
 
     // add to html
     document.currentScript.parentNode.appendChild(imgnode)
-    document.currentScript.parentNode.appendChild(buttonnode)
+    document.currentScript.parentNode.appendChild(txtnode)
 }
 
 // a wrapper for displayItem
