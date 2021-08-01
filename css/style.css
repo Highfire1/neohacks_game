@@ -2,27 +2,34 @@
   font-family: 'Gowun Batang', serif;
 }
 body {
-    background-color: #F7996E;
-    color:#2F242C;
+  background-image: url('https://img.freepik.com/free-vector/luxury-old-library-interior-night-dark-empty-room-reading-with-books-wooden-shelves_107791-3025.jpg?size=626&ext=jpg&ga=GA1.2.2042533943.1627603200');
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*Give anything a border (class)*/
 .border {
-    border: 5px solid #B14AED;
+  border: 5px solid #B14AED;
 }
 
 /*Made the div display in a row instead of in a column*/
 .container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 /*Ingredients style*/
 #ingreds{
-  width:600px;
+  max-width:400px;
   height:550px;
-  background-color:#B14AED;
+  margin:20px;
+  padding:none;
+  background-color:#ff4d4d;
   text-align:center;
 }
 
@@ -71,4 +78,9 @@ body {
 
 #taken{
   width:600px;
+}
+
+a:link,a:visited{
+  text-decoration: none;
+  color:white;
 }
