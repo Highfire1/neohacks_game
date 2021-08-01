@@ -8,7 +8,7 @@ let items = {
 
     "eyeOfNewt" : {
         name : "Eye of Newt",
-        image : "newt.png",
+        image : "newteye.png",
         count : 0,
     },
 
