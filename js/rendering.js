@@ -1,3 +1,4 @@
+// used to display image + button for every item on screen
 function displayItem(item) {
     // throw if item is not in items
     if (typeof items[item] == "undefined") {

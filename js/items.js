@@ -18,12 +18,15 @@ let items = {
         count : 0
     }
 
+    // add more items here
+
   };
 
 let recipes = {
     "magicFuel" : [items.eyeOfNewt, items.batWing]
 }
 
+// used to check if recipes exist in the cauldron
 function lookForRecipe(cauldron_array) {
 
     // if we don't want order to matter, add a .sort() around here
@@ -36,26 +39,28 @@ function lookForRecipe(cauldron_array) {
         if (arraysEqual(value, cauldron_array)) {
             
             console.log("recipe detected!")
-            // add more infrastructure here once it exists
-            items[key].count += 1
 
+            // add more infrastructure + graphics here once they exist
+            items[key].count += 1
             return key;
         }
     }
 }
 
+// wrapper function to check for recipes
 function addToCauldron(item) {
     if (typeof items[item] == "undefined") {
         throw "in addToCauldron, item " + item + " does not exist!"
     }
 
     cauldron.push(items[item]);
-    
+
     lookForRecipe(cauldron);
 }
 
 
 // from stackoverflow
+// used to check if two objects are the same
 function arraysEqual(a, b) {
     //console.log(JSON.stringify(a))
     //console.log(JSON.stringify(b))

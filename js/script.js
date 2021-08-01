@@ -1,4 +1,4 @@
 // example usages
-//console.log(items.batWing.name) 
-//addToCauldron(items.eyeOfNewt)
-//lookForRecipe(cauldron);
+// console.log(items.batWing.name) 
+// addToCauldron(items.eyeOfNewt)
+// lookForRecipe(cauldron);
