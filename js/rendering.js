@@ -12,20 +12,20 @@ function displayItem(item) {
     // adds listener to button so it calls addToCauldron when its clicked
     imgnode.addEventListener("click", function(){addToCauldron(item)} )
 
-    const txtnode = document.createElement("bottom-right")
-    txtnode.textContent = items[item].count
-
-    items[item].txtnode = txtnode
-
-
     // this needs some work
     // also, <img src="assets/batwing.png" alt="Snow" style="width:100%;">
     imgnode.style.width = "10%"
     imgnode.style.height = "10%"
 
+    const txtnode = document.createElement("bottom-right")
+    txtnode.textContent = items[item].count
+
     // add to html
     document.currentScript.parentNode.appendChild(imgnode)
     document.currentScript.parentNode.appendChild(txtnode)
+
+    // CHANGE THIS NUMBER IF MORE CHILDS ARE ADDED
+    items[item].txtnode = document.currentScript.parentNode.children[2]
 }
 
 // a wrapper for displayItem

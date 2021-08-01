@@ -63,6 +63,9 @@ function addToCauldron(item) {
     if (typeof items[item] == "undefined") {
         throw "in addToCauldron, item " + item + " does not exist!"
     }
+    
+    items[item].count -= 1
+    items[item].txtnode.textContent = items[item].count
 
     console.log(items[item].name + " added to cauldron!")
     cauldron.push(items[item])
