@@ -83,7 +83,9 @@ let items = {
   };
 
 let recipes = {
-    "magicFuel" : [items.eyeOfNewt, items.crowFeather]
+    "magicFuel" : [items.newtEye, items.crowFeather],
+    "phoenixTear" : [items.crowFeather, items.tarDash, items.waterDrop],
+    "nightlock" : [items.mushroom, items.daisy, items.newtEye]
 }
 
 // used to check if recipes exist in the cauldron
