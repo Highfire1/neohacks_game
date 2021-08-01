@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
+<!-- JS Initialization -->
+<script src="js/items.js"></script>
+<script src="js/rendering.js"></script>
+<!-- Main js function -->
+<script src="js/script.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,15 +19,23 @@
 </head>
 
 <body>
-    <!-- JS Initialization -->
-    <script src="js/items.js"></script>
-    <!-- Main js function -->
-    <script src="js/script.js"></script>
 
     <div class="container">
       <div id="ingreds">
         <h1>Ingredients</h1>
         <p> Place ingredients here </p>
+        
+        <!-- displayItem() puts a Image & Button into the node its enclosed in, feel free to change the grid up so it looks nice and matches to backdrop -->
+        
+        <div class="grid">
+            <div class="item">
+                <script>displayItem("eyeOfNewt")</script>
+            </div>
+            <div class="item">
+                <script>displayItem("eyeOfNewt")</script>
+            </div>
+        </div>
+
       </div>
       <div style="display:baseline;">
         <div style="height:300px;">

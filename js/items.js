@@ -44,6 +44,16 @@ function lookForRecipe(cauldron_array) {
     }
 }
 
+function addToCauldron(item) {
+    if (typeof items[item] == "undefined") {
+        throw "in addToCauldron, item " + item + " does not exist!"
+    }
+    
+    console.log("addToCauldron - item added to cauldron")
+    cauldron.push(items[item])
+
+}
+
 
 // from stackoverflow
 function arraysEqual(a, b) {
