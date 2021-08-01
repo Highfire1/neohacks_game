@@ -18,8 +18,8 @@ let items = {
         count : 0
     },
     
-    "daisy" : {
-        name : "Daisy",
+    "daisyPetal" : {
+        name : "Petals of Daisy",
         image : "daisy.jpg",
         count : 0,
     },
@@ -48,7 +48,13 @@ let items = {
         count : 0,
     },
     
-    "phoenixtear" : {
+    "pinecone" : {
+        name : "Pinecone",
+        image : "",
+        count : 0,
+    },
+    
+    "phoenixTear" : {
         name : "Tear of Phoenix",
         image : "phoenixtear.png",
         count : 0,
@@ -85,7 +91,7 @@ let items = {
 let recipes = {
     "newtEye" : [items.catHair, items.eagleTalons, ],
     "phoenixTear" : [items.crowFeather, items.tarDash, items.waterDrop],
-    "nightlock" : [items.mushroom, items.daisy, items.adderTongue],
+    "nightlock" : [items.mushroom, items.daisyPetal, items.adderTongue],
 }
 
 // used to check if recipes exist in the cauldron
