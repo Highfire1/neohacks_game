@@ -29,21 +29,17 @@ function lookForRecipe(cauldron_array) {
     // if we don't want order to matter, add a .sort() around here
     // if we want to add some time-based mechanic, this will need some rework
 
-    for (var key in recipes) {
-        console.log(key)              // returns magicFuel
-        console.log(cauldron_array)   // returns an array
-
-        if (arraysEqual(recipes.key, cauldron_array)) {
-
+    for (const recipe of Object.values(recipes)) {
+        if (arraysEqual(recipe, cauldron_array)) {
             console.log("RECIPE DETECTED")
-            break;
+            return;
         }
     }
     console.log("no recipe")
 }
 
+
 // from stackoverflow
-function arraysEqual(a1,a2) {
-    /* WARNING: arrays must not contain {objects} or behavior may be undefined */
-    return JSON.stringify(a1)==JSON.stringify(a2);
-}
+function arraysEqual(a, b) {
+    return JSON.stringify(a) === JSON.stringify(b);
+  }
