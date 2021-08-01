@@ -6,9 +6,12 @@ function displayItem(item) {
     }
 
     // create image
-    // possible we may need to resize the image here
     const imgnode = document.createElement("img")
-    imgnode.src = items[item].image
+    imgnode.src = "assets/" + items[item].image
+
+    // this needs some work, 
+    imgnode.style.width = "50%"
+    imgnode.style.height = "10%"
 
     //create button
     const buttonnode = document.createElement("button")
