@@ -41,3 +41,15 @@ body {
   bottom: 8px;
   right: 16px;
 }
+
+/*grid design*/
+.grid{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/*stupid ass eye of newt*/
+#item_urg{
+  width:500px;
+}
