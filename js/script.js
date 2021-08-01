@@ -13,6 +13,8 @@ let cauldron = []
 // mode 4 = end
 let mode = 0
 
+// load from localstorage
+loadEverything()
 
 var audio = new Audio('assets/possession.mp3');
 

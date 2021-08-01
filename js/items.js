@@ -71,6 +71,7 @@ function addToCauldron(item) {
     cauldron.push(items[item])
 
     lookForRecipe(cauldron)
+    saveEverything()
 }
 
 
