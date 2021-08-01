@@ -15,35 +15,20 @@ let dialogue = 1
 
 let dialoguenum = 0
 
-// unused currently
-function pretty_dialogue() {  
-    console.log("doing dialogue")
+
+function editDialogue() {
 
     // todo : read wanted dialog from localStorage
 
-    const dianode = document.createElement("dialog") 
-    const pnode = document.createElement("p")
-    const qnode = document.createElement("q")
-    
-    console.log(strings[dialogue][dialoguenum][1])
-    qnode.textContent = strings[dialogue][dialoguenum][1]
+    if(dialoguenum == strings[dialogue].length) {
+        console.log("going back to previous location")
+        // add code here
+        return
+    }
 
-    pnode.appendChild(qnode)
-    dianode.appendChild(qnode)
+    console.log(document.getElementById("dialogueText"))
 
-    dianode.setAttribute("open", true)
-    dianode.setAttribute("id", "dialogue")
-    dianode.addEventListener("click", function(){edit_dialogue()} )
-
-    document.currentScript.parentNode.appendChild(dianode)
-
-    dialoguenum += 1
-}
-
-function editDialogue() {
-    console.log(document.getElementById("dialogue"))
-
-    document.getElementById("dialogue").textContent = strings[dialogue][dialoguenum][1]
+    document.getElementById("dialogueText").textContent = strings[dialogue][dialoguenum][1]
     
     dialoguenum += 1
 }
