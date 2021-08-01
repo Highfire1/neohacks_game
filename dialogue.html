@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
+<!-- dialogue js -->
+<script src="js/dialogue.js"></script>
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,17 +17,15 @@
 </head>
 
 <body  id="bkrd2">
-    <!-- JS Initialization -->
-    <script src="js/items.js"></script>
-    <!-- Main js function -->
-    <script src="js/script.js"></script>
-    <!--<a href="index.html" class="button">Mix ingredients</button> -->
-
+  <!--<a href="index.html" class="button">Mix ingredients</button> -->
   <!--dialogue-->
   <div>      
-    <dialog open id="taken">
-      <p><q>Once upon a time, there was a witch, Celestina, she brewed potions for a living and had a pet bat, Ambrose. One day as she was brewing a potion, she didn't realize that the window was open and a magical wind current came through the door. Without realizing it, Ambrose was wisked away by the wind. Celestina turned around to find that Ambrose was missing.</q></p>
+
+
+    <dialog open id="dialogue" onclick="editDialogue()"> 
+      <p><q>...</q></p>
     </dialog>
+
     <!--first scene where ambrose flys away-->
     <div>
       <img id="witch" src="assets/witch.png" alt="image of a witch">
