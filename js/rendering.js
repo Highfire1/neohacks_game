@@ -19,7 +19,8 @@ function displayItem(item) {
     imgnode.style.width = "100%"
     imgnode.style.height = "100%"
 
-    const txtnode = document.createElement("bottom-right")
+    const txtnode = document.createElement("div")
+    txtnode.classList.add("bottom-right")
     txtnode.textContent = items[item].count
 
     // add to html
