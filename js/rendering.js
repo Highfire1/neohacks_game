@@ -20,3 +20,21 @@ function displayItem(item) {
     document.currentScript.parentNode.appendChild(imgnode)
     document.currentScript.parentNode.appendChild(buttonnode)
 }
+
+// a wrapper for displayItem
+// I don't know if this is useful as it will only make rows, not columns
+// also not tested but I can clean it up if we need it
+function displayItemWrapper(obj) {
+    let parentnode = document.currentScript.parentNode
+
+    for (const [key, value] of Object.entries(obj)) {
+        const itemnode = document.createElement("item")
+        const scriptnode = document.createElement("script")
+
+        itemnode.appendChild(scriptnode)
+        // no clue if this works or not
+        scriptnode.setAttribute(displayItem(key))
+        
+        parentnode.appendChild(itemnode)
+    }
+}
