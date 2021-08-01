@@ -54,19 +54,19 @@ let items = {
         count : 0,
     },
     
-    "tardash" : {
+    "tarDash" : {
         name : "Dash of Tar",
         image : "tardrop.jpg",
         count : 0,
     },
     
-    "addertongue" : {
+    "adderTongue" : {
         name : "Tongue of Adder",
         image : "tongueofadder.jpg",
         count : 0,
     },
     
-    "waterdrop" : {
+    "waterDrop" : {
         name : "Drop of Water",
         image : "waterdrop.png",
         count : 0,
