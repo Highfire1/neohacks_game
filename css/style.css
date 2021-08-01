@@ -53,3 +53,22 @@ body {
 #item_urg{
   width:500px;
 }
+
+/*style for ambrose*/
+.ambrose{
+  width:130px;
+  position: fixed;
+  bottom:8;
+  right:0;
+}
+
+/*witch on the second page*/
+#witch{
+  position: fixed;
+  left:0;
+  bottom:0;
+}
+
+#taken{
+  width:600px;
+}
