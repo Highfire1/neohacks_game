@@ -4,7 +4,6 @@
 body {
   background-image: url('https://img.freepik.com/free-vector/luxury-old-library-interior-night-dark-empty-room-reading-with-books-wooden-shelves_107791-3025.jpg?size=626&ext=jpg&ga=GA1.2.2042533943.1627603200');
   height: 100%;
-
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
@@ -83,4 +82,13 @@ body {
 a:link,a:visited{
   text-decoration: none;
   color:white;
+}
+
+#bkrd2{
+  background-image: url('https://img.freepik.com/free-vector/luxury-old-library-interior-night-dark-empty-room-reading-with-books-wooden-shelves_107791-3025.jpg?size=626&ext=jpg&ga=GA1.2.2042533943.1627603200');
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
