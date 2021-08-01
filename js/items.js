@@ -48,10 +48,10 @@ function addToCauldron(item) {
     if (typeof items[item] == "undefined") {
         throw "in addToCauldron, item " + item + " does not exist!"
     }
-    
-    console.log("addToCauldron - item added to cauldron")
-    cauldron.push(items[item])
 
+    cauldron.push(items[item]);
+    
+    lookForRecipe(cauldron);
 }
 
 
