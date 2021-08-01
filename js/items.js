@@ -20,7 +20,7 @@ let items = {
     
     "daisy" : {
         name : "Daisy",
-        image : "daisy.png",
+        image : "daisy.jpg",
         count : 0,
     },
     
