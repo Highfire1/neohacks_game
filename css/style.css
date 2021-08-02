@@ -16,7 +16,7 @@ body {
 }
 
 /*Made the div display in a row instead of in a column*/
-.container{
+#container{
   display:flex;
   justify-content:center;
   align-items:center;
@@ -95,4 +95,15 @@ a:link,a:visited{
 
 dialog{
   width:600px;
+}
+
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:40px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
 }
