@@ -50,9 +50,9 @@ body {
 
 /*grid design*/
 .grid{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
 }
 
 /*updated eye of newt*/
