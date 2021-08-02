@@ -140,6 +140,11 @@ function addToCauldron(item) {
     cauldron.push(items[item])
 
     lookForRecipe(cauldron)
+
+    if (cauldron.length > 5) {
+        cauldron = []
+    }
+
     saveEverything()
 }
 

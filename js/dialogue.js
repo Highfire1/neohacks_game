@@ -91,6 +91,7 @@ let dialoguenum = 0
 
 function editDialogue() {
     
+    
     // don't mind the spaghetti
     console.log(localStorage.getItem("dialoguetracker"))
 
