@@ -20,13 +20,13 @@ let items = {
     
     "daisyPetal" : {
         name : "Petals of Daisy",
-        image : "daisy.jpg",
+        image : "daisy.png",
         count : 0,
     },
     
     "eagleTalons" : {
         name : "Talons of Eagle",
-        image : "eagletalons.jpg",
+        image : "eagletalons.png",
         count : 0,
     },
     
@@ -38,13 +38,13 @@ let items = {
     
     "mushroom" : {
         name : "Mushrooms",
-        image : "mushroom.jpg",
+        image : "mushroom.png",
         count : 0,
     },
     
     "nightlock" : {
         name : "Berries of Nightlock",
-        image : "nightlock.jpg",
+        image : "nightlock.png",
         count : 0,
     },
     
@@ -62,13 +62,13 @@ let items = {
     
     "tarDash" : {
         name : "Dash of Tar",
-        image : "tardrop.jpg",
+        image : "tardrop.png",
         count : 0,
     },
     
     "adderTongue" : {
         name : "Tongue of Adder",
-        image : "tongueofadder.jpg",
+        image : "tongueofadder.png",
         count : 0,
     },
     
