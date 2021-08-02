@@ -1,201 +1,77 @@
-const quizContainer = document.getElementById('quiz');
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
-const resultsContainer = document.getElementById('results');
+	function showQuestions(questions, quizContainer){
+		// code will go here
+	}
 
-const submitButton = document.getElementById('submit');
+	function showResults(questions, quizContainer, resultsContainer){
+		// code will go here
+	}
 
-function buildQuiz(){}
+	// show the questions
+	showQuestions(questions, quizContainer);
 
-function showResults(){}
+	// when user clicks submit, show results
+	submitButton.onclick = function(){
+		showResults(questions, quizContainer, resultsContainer);
+	}
+}
 
-// display quiz right away
-buildQuiz();
-
-// on submit, show results
-submitButton.addEventListener('click', showResults);
-
-const myQuestions = [
-  {
-    question: "What were used as counters, a sort of primitive version of the beads on an abacus?",
-    answers: {
-      a: "Coins",
-      b: "Sticks",
-      c: "Leaves"
-    },
-    correctAnswer: "b"
-  },
-  {
-    question: "The floor was made of dirt. Only the wealthy had something other than dirt, ergo what saying?",
-    answers: {
-      a: "Dirt poor",
-      b: "Rich",
-      c: "Pretty Cheap"
-    },
-    correctAnswer: "a"
-  },
-  {
-    question: "Many surnames (last names) were created as descriptions of the person’s what?",
-    answers: {
-      a: "Job",
-      b: "Location",
-      c: "Parents",
-      d: "All of the above."
-    },
-    correctAnswer: "d"
-  }
+var myQuestions = [
+	{
+		question: "What is 10/2?",
+		answers: {
+			a: '3',
+			b: '5',
+			c: '115'
+		},
+		correctAnswer: 'b'
+	},
+	{
+		question: "What is 30/3?",
+		answers: {
+			a: '3',
+			b: '5',
+			c: '10'
+		},
+		correctAnswer: 'c'
+	}
 ];
 
-function buildQuiz(){
-  // variable to store the HTML output
-  const output = [];
+function showQuestions(questions, quizContainer){
+	// we'll need a place to store the output and the answer choices
+	var output = [];
+	var answers;
 
-  // for each question...
-  myQuestions.forEach(
-    (currentQuestion, questionNumber) => {
+	// for each question...
+	for(var i=0; i<questions.length; i++){
+		
+		// first reset the list of answers
+		answers = [];
 
-      // variable to store the list of possible answers
-      const answers = [];
+		// for each available answer to this question...
+		for(letter in questions[i].answers){
 
-      // and for each available answer...
-      for(letter in currentQuestion.answers){
+			// ...add an html radio button
+			answers.push(
+				'<label>'
+					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+					+ letter + ': '
+					+ questions[i].answers[letter]
+				+ '</label>'
+			);
+		}
 
-        // ...add an HTML radio button
-        answers.push(
-          `<label>
-            <input type="radio" name="question${questionNumber}" value="${letter}">
-            ${letter} :
-            ${currentQuestion.answers[letter]}
-          </label>`
-        );
-      }
+		// add this question and its answers to the output
+		output.push(
+			'<div class="question">' + questions[i].question + '</div>'
+			+ '<div class="answers">' + answers.join('') + '</div>'
+		);
+	}
 
-      // add this question and its answers to the output
-      output.push(
-        `<div class="question"> ${currentQuestion.question} </div>
-        <div class="answers"> ${answers.join('')} </div>`
-      );
-    }
-  );
-
-  // finally combine our output list into one string of HTML and put it on the page
-  quizContainer.innerHTML = output.join('');
+	// finally combine our output list into one string of html and put it on the page
+	quizContainer.innerHTML = output.join('');
 }
 
-myQuestions.forEach( (currentQuestion, questionNumber) => {
-  // the code we want to run for each question goes here
-})
-
-// we'll want to store the list of answer choices
-const answers = [];
-
-// and for each available answer...
-for(letter in currentQuestion.answers){
-
-  // ...add an html radio button
-  answers.push(
-    `<label>
-      <input type="radio" name="question${questionNumber}" value="${letter}">
-      ${letter} :
-      ${currentQuestion.answers[letter]}
-    </label>`
-  );
-}
-
-// add this question and its answers to the output
-output.push(
-  `<div class="question"> ${currentQuestion.question} </div>
-  <div class="answers"> ${answers.join('')} </div>`
-);
-
-quizContainer.innerHTML = output.join('');
-
-function showResults(){
-
-  // gather answer containers from our quiz
-  const answerContainers = quizContainer.querySelectorAll('.answers');
-
-  // keep track of user's answers
-  let numCorrect = 0;
-
-  // for each question...
-  myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-    // find selected answer
-    const answerContainer = answerContainers[questionNumber];
-    const selector = `input[name=question${questionNumber}]:checked`;
-    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-    // if answer is correct
-    if(userAnswer === currentQuestion.correctAnswer){
-      // add to the number of correct answers
-      numCorrect++;
-
-      // color the answers green
-      answerContainers[questionNumber].style.color = 'lightgreen';
-    }
-    // if answer is wrong or blank
-    else{
-      // color the answers red
-      answerContainers[questionNumber].style.color = 'red';
-    }
-  });
-
-  // show number of correct answers out of total
-  resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-}
-
-// gather answer containers from our quiz
-const answerContainers = quizContainer.querySelectorAll('.answers');
-
-// keep track of user's answers
-let numCorrect = 0;
-
-// for each question...
-myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-  // find selected answer
-  const answerContainer = answerContainers[questionNumber];
-  const selector = `input[name=question${questionNumber}]:checked`;
-  const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-  // if answer is correct
-  if(userAnswer === currentQuestion.correctAnswer){
-    // add to the number of correct answers
-    numCorrect++;
-
-    // color the answers green
-    answerContainers[questionNumber].style.color = 'lightgreen';
-  }
-  // if answer is wrong or blank
-  else{
-    // color the answers red
-    answerContainers[questionNumber].style.color = 'red';
-  }
-});
-
-// find selected answer
-const answerContainer = answerContainers[questionNumber];
-const selector = `input[name=question${questionNumber}]:checked`;
-const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-// if answer is correct
-if(userAnswer === currentQuestion.correctAnswer){
-  // add to the number of correct answers
-  numCorrect++;
-
-  // color the answers green
-  answerContainers[questionNumber].style.color = 'lightgreen';
-}
-// if answer is wrong or blank
-else{
-  // color the answers red
-  answerContainers[questionNumber].style.color = 'red';
-}
-
-// show number of correct answers out of total
-resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-
-(function(){
-  // put the rest of your code here
-})();
+showQuestions(questions, quizContainer);
 
