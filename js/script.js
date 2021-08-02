@@ -1,8 +1,5 @@
-// example usages
-// console.log(items.batWing.name) 
-// addToCauldron(items.eyeOfNewt)
-// lookForRecipe(cauldron);
-
+// reminder to self:
+// credit https://www.freepik.com/free-vector/luxury-old-library-interior-night-dark-empty-room-reading-with-books-wooden-shelves_9396114.htm somewhere
 
 
 
