@@ -87,25 +87,10 @@ let strings = {
 } 
 
 let dialoguenum = 0
+dialoguetracker = JSON.parse(localStorage.getItem("dialoguetracker"))
 
 
 function editDialogue() {
-    
-    
-    // don't mind the spaghetti
-    console.log(localStorage.getItem("dialoguetracker"))
-
-    if (localStorage.getItem("dialoguetracker") === null) {
-        console.log("no dialoguetracker found")
-        localStorage.setItem("dialoguetracker", JSON.stringify(0))
-        dialoguetracker = 1
-      } else {
-        dialoguetracker = JSON.parse(localStorage.getItem("dialoguetracker"))
-    }
-
-    if (dialoguetracker == 0) {
-        dialoguetracker = 1
-    }
 
     console.log(dialoguetracker)
 
@@ -115,11 +100,10 @@ function editDialogue() {
         console.log("going back to previous location")
 
         dialoguetracker += 1
-
         localStorage.setItem("dialoguetracker", JSON.stringify(dialoguetracker))
-
+        
+        console.log("saved dialoguetracker as " + dialoguetracker)
         window.location.href = "index.html";
-        // add code here
         return;
 
     }
