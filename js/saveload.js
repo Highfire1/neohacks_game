@@ -18,6 +18,5 @@ function clearData() {
     localStorage.removeItem("cauldron")
     localStorage.removeItem("dialoguetracker")
 
-    location.reload();
-    return false;
+    location.reload(); // reload page
 }
