@@ -19,7 +19,12 @@ function displayItem(item) {
 
     const txtnode = document.createElement("div")
     txtnode.classList.add("bottom-right")
-    txtnode.textContent = items[item].count
+
+    if (!(items[item].count == Number.MAX_SAFE_INTEGER)) {
+        txtnode.textContent = items[item].count
+    } else {
+        txtnode.textContent = "∞"
+    }
 
     // add to html
     document.currentScript.parentNode.appendChild(imgnode)

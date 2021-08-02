@@ -75,7 +75,7 @@ let items = {
     "waterDrop" : {
         name : "Drop of Water",
         image : "waterdrop.png",
-        count : 100000,
+        count : Number.MAX_SAFE_INTEGER,
     },
 
     "magicFuel" : {
@@ -111,7 +111,7 @@ function lookForRecipe(cauldron_array) {
             // add more infrastructure + graphics here once they exist
             
             // empty the cauldron
-            cauldron = []
+            clearCauldron()
             // add the recipe item
             items[key].count += 1
 
@@ -122,8 +122,6 @@ function lookForRecipe(cauldron_array) {
 
 // wrapper function to check for recipes
 function addToCauldron(item) {
-    console.log(items[item])
-    console.log(items)
 
     if (items[item].count == 0) {
         return;
@@ -132,11 +130,14 @@ function addToCauldron(item) {
     if (typeof items[item] == "undefined") {
         throw "in addToCauldron, item " + item + " does not exist!"
     }
-    
-    items[item].count -= 1
-    items[item].txtnode.textContent = items[item].count
-
     console.log(items[item].name + " added to cauldron!")
+    
+    if (!(items[item].count == Number.MAX_SAFE_INTEGER)) {
+        items[item].count -= 1
+        items[item].txtnode.textContent = items[item].count
+    }
+
+    
     cauldron.push(items[item])
 
     lookForRecipe(cauldron)
@@ -148,6 +149,10 @@ function addToCauldron(item) {
     saveEverything()
 }
 
+function clearCauldron() {
+    cauldron = []
+    saveEverything()
+}
 
 // from stackoverflow
 // used to check if two objects are the same
