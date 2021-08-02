@@ -24,29 +24,42 @@ let strings = {
         ["Celestina", "I'm sure he's having the time of his life!"],
         ["Celestina", "But I need him to make my potions!"],
         ["Celestina", "Farmer Ivo, surely you can help! I need some plants from your field."],
+        ["Farmer Ivo", "I'm afraid your out of luck."], // MAKE RUSSIAN
+        ["Farmer Ivo", "PUZZLE EXPLANATION"] 
     ],
     // introduction to puzzle 1
     3 : [
-
+        ["Celestina", "Here goes nothing!"]
     ],
     // meet back with farmer ivo
     4 : [
+        ["Farmer Ivo", "You made it!"],
+        ["Celestina", "wow that [puzzle] was hard for [reasons]"],
+        ["Celestina", "anyways baii"],
 
     ],
     // meet idalia
     5 : [
+        ["???", "..."],
+        ["Celestina", "Hello?"],
+        ["Celestina", "I know I heard something..."],
+        ["???", "BOO"],
+        ["Celestina", "insert exposition here"]
 
     ],
     // dialogue for puzzle 2
     6 : [
+        ["Celestina", "[relevant text here]"],
 
     ],
     // meet back with idalia
     7 : [
+        ["Celestina", "yay!"],
 
     ],
     // meet petrarch
     8 : [
+        ["Celestina", ""],
 
     ],
     // puzzle 3
