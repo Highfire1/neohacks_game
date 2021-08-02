@@ -16,8 +16,8 @@ function displayItem(item) {
 
     // this needs some work
     // also, <img src="assets/batwing.png" alt="Snow" style="width:100%;">
-    imgnode.style.width = "50%"
-    imgnode.style.height = "50%"
+    imgnode.style.width = "100%"
+    imgnode.style.height = "75%"
 
     const txtnode = document.createElement("div")
     txtnode.classList.add("bottom-right")
