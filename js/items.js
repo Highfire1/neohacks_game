@@ -75,7 +75,7 @@ let items = {
     "waterDrop" : {
         name : "Drop of Water",
         image : "waterdrop.png",
-        count : 100,
+        count : 100000,
     },
 
     "magicFuel" : {

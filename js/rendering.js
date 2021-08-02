@@ -13,9 +13,7 @@ function displayItem(item) {
     // adds listener to button so it calls addToCauldron when its clicked
     imgnode.addEventListener("click", function(){addToCauldron(item)} )
     
-
-    // this needs some work
-    // also, <img src="assets/batwing.png" alt="Snow" style="width:100%;">
+    // sizing
     imgnode.style.width = "100%"
     imgnode.style.height = "75%"
 
