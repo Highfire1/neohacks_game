@@ -22,9 +22,8 @@ let mode = 0
 loadEverything()
 
 var audio = new Audio('assets/possession.mp3');
-
 // chrome won't let this play until the user clicks anything
-// audio.play();
+audio.play();
 
 console.log("in script.js, dialoguetracker is: " + dialoguetracker)
 

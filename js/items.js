@@ -15,19 +15,19 @@ let items = {
     "crowFeather" : {
         name : "Feather of Crow",
         image : "crowfeather.png",
-        count : 0
+        count : 5
     },
     
     "daisyPetal" : {
         name : "Petals of Daisy",
         image : "daisy.png",
-        count : 0,
+        count : 5,
     },
     
     "eagleTalons" : {
         name : "Talons of Eagle",
         image : "eagletalons.png",
-        count : 0,
+        count : 5,
     },
     
     "newtEye" : {
@@ -75,7 +75,7 @@ let items = {
     "waterDrop" : {
         name : "Drop of Water",
         image : "waterdrop.png",
-        count : 0,
+        count : 100,
     },
 
     "magicFuel" : {
@@ -124,6 +124,11 @@ function lookForRecipe(cauldron_array) {
 function addToCauldron(item) {
     console.log(items[item])
     console.log(items)
+
+    if (items[item].count == 0) {
+        return;
+    }
+
     if (typeof items[item] == "undefined") {
         throw "in addToCauldron, item " + item + " does not exist!"
     }
