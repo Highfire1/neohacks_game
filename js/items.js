@@ -89,7 +89,7 @@ let items = {
   };
 
 let recipes = {
-    "newtEye" : [items.catHair, items.eagleTalons, ],
+    "newtEye" : [items.catHair, items.eagleTalons, items.pinecone],
     "phoenixTear" : [items.crowFeather, items.tarDash, items.waterDrop],
     "nightlock" : [items.mushroom, items.daisyPetal, items.adderTongue],
 }
