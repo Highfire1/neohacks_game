@@ -9,7 +9,7 @@ let strings = {
         ["???", "And the wind whisked Ambrose away!"],
         ["Celestina", "AAAAAAAAAAAAAAAAAAAAA"],
         ["Celestina", "Ambrose!"],
-        ["???", "Celestina rushed out and searched for hours but Ambrose was nowhere to be found."]
+        ["???", "Celestina rushed out and searched for hours but Ambrose was nowhere to be found."],
         ["Celestina", "time to do potion brewing xd haha :D"],
     ],
     // meet farmer ivo
@@ -86,25 +86,48 @@ let strings = {
 
 } 
 
-// this will be replaced later
-let dialogue = 1
-
 let dialoguenum = 0
 
 
 function editDialogue() {
+    
+    // don't mind the spaghetti
+    console.log(localStorage.getItem("dialoguetracker"))
 
-    // todo : read wanted dialog from localStorage
-
-    if(dialoguenum == strings[dialogue].length) {
-        console.log("going back to previous location")
-        // add code here
-        return
+    if (localStorage.getItem("dialoguetracker") === null) {
+        console.log("no dialoguetracker found")
+        localStorage.setItem("dialoguetracker", JSON.stringify(0))
+        dialoguetracker = 1
+      } else {
+        dialoguetracker = JSON.parse(localStorage.getItem("dialoguetracker"))
     }
 
-    console.log(document.getElementById("dialogueText"))
+    if (dialoguetracker == 0) {
+        dialoguetracker = 1
+    }
 
-    document.getElementById("dialogueText").textContent = strings[dialogue][dialoguenum][1]
+    console.log(dialoguetracker)
+
+    
+
+    if(dialoguenum == strings[dialoguetracker].length) {
+        console.log("going back to previous location")
+
+        dialoguetracker += 1
+
+        localStorage.setItem("dialoguetracker", JSON.stringify(dialoguetracker))
+
+        window.location.href = "index.html";
+        // add code here
+        return;
+
+    }
+
+    
+
+    //console.log(document.getElementById("dialogueText"))
+
+    document.getElementById("dialogueText").textContent = strings[dialoguetracker][dialoguenum][1]
     
     dialoguenum += 1
 }
