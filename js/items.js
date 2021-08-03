@@ -8,73 +8,73 @@ let items = {
     
     "catHair" : {
         name : "Hair of Cat",
-        image : "cathair.png",
+        image : "error.png",
         count : 0,
     },
     
     "crowFeather" : {
         name : "Feather of Crow",
-        image : "crowfeather.png",
+        image : "error.png",
         count : 5
     },
     
     "daisyPetal" : {
         name : "Petals of Daisy",
-        image : "daisy.png",
+        image : "error.png",
         count : 5,
     },
     
     "eagleTalons" : {
         name : "Talons of Eagle",
-        image : "eagletalons.png",
+        image : "error.png",
         count : 5,
     },
     
     "newtEye" : {
         name : "Eye of Newt",
-        image : "eyeofnewt.png",
+        image : "error.png",
         count : 0,
     },
     
     "mushroom" : {
         name : "Mushrooms",
-        image : "mushroom.png",
+        image : "error.png",
         count : 0,
     },
     
     "nightlock" : {
         name : "Berries of Nightlock",
-        image : "nightlock.png",
+        image : "error.png",
         count : 0,
     },
     
     "pinecone" : {
         name : "Pinecone",
-        image : "",
+        image : "error.png",
         count : 0,
     },
     
     "phoenixTear" : {
         name : "Tear of Phoenix",
-        image : "phoenixtear.png",
+        image : "error.png",
         count : 0,
     },
     
     "tarDash" : {
         name : "Dash of Tar",
-        image : "tardrop.png",
+        image : "error.png",
         count : 0,
     },
     
     "adderTongue" : {
         name : "Tongue of Adder",
-        image : "tongueofadder.png",
+        image : "error.png",
         count : 0,
     },
 
     "magicFuel" : {
         name : "Magic Fuel",
-        image : "",
+        image : "error.png",
         count : 0
     },
 
@@ -84,27 +84,27 @@ let items = {
     "stir" : {
         name : "Ladle",
         description : "stir the cauldron",
-        image : "",
+        image : "error.png",
         infinite : true,
         count : Number.MAX_SAFE_INTEGER
     },
     "strain" : {
         name : "Strainer",
         description : "strain the contents of your cauldron",
-        image : "",
+        image : "error.png",
         infinite : true,
         count : Number.MAX_SAFE_INTEGER
     },
     "evaporate" : {
         name : "Turn up the heat",
         description : "description text",
-        image : "",
+        image : "error.png",
         infinite : true,
         count : Number.MAX_SAFE_INTEGER
     },
     "waterDrop" : {
         name : "Drop of Water",
-        image : "waterdrop.png",
+        image : "error.png",
         infinite : true,
         count : Number.MAX_SAFE_INTEGER
     },
