@@ -88,6 +88,7 @@ let items = {
 
   };
 
+// todo make time / other things required in this 
 let recipes = {
     "newtEye" : [items.catHair, items.eagleTalons, items.pinecone],
     "phoenixTear" : [items.crowFeather, items.tarDash, items.waterDrop],
@@ -123,28 +124,24 @@ function lookForRecipe(cauldron_array) {
 // wrapper function to check for recipes
 function addToCauldron(item) {
 
+    // check if item is addable
     if (items[item].count == 0) {
         return;
     }
-
     if (typeof items[item] == "undefined") {
         throw "in addToCauldron, item " + item + " does not exist!"
     }
-    console.log(items[item].name + " added to cauldron!")
-    
+
+    // remove item / update item count
     if (!(items[item].count == Number.MAX_SAFE_INTEGER)) {
         items[item].count -= 1
         items[item].txtnode.textContent = items[item].count
     }
-
     
     cauldron.push(items[item])
+    cauldron.push(new Date())
 
     lookForRecipe(cauldron)
-
-    if (cauldron.length > 5) {
-        cauldron = []
-    }
 
     saveEverything()
 }
@@ -154,10 +151,9 @@ function clearCauldron() {
     saveEverything()
 }
 
+
 // from stackoverflow
-// used to check if two objects are the same
+// check if two objects are the same
 function arraysEqual(a, b) {
-    //console.log(JSON.stringify(a))
-    //console.log(JSON.stringify(b))
     return JSON.stringify(a) === JSON.stringify(b)
   }
