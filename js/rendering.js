@@ -39,8 +39,7 @@ function displayItemWrapper(obj) {
 
     let parentnode = document.currentScript.parentNode
 
-    for (const [key, value] of Object.entries(obj)) {
-        console.log("rendering item: " + key )
+    for (let key in obj) {
 
         const wrappernode = document.createElement("div")
         wrappernode.setAttribute("class", "container")
@@ -49,8 +48,6 @@ function displayItemWrapper(obj) {
         scriptnode.textContent = "displayItem(\""+ key + "\")"
 
         wrappernode.appendChild(scriptnode)
-        // no clue if this works or not
-
         parentnode.appendChild(wrappernode)
     }
 }

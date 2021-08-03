@@ -35,14 +35,20 @@ body {
 
 
 /* Below from https://www.w3schools.com/howto/howto_css_image_text.asp */
-/* Container holding the image and the text */
-.container {
-  position: relative;
+/* used in ingredients display */
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:40px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
   text-align: center;
-  color: white;
+  color: white; /* text color */
+  position: relative;
 }
-
-/* Bottom right text */
+/* used in ingredients display */
 .bottom-right {
   position: absolute;
   bottom: 8px;
@@ -98,14 +104,4 @@ dialog{
   width:600px;
 }
 
-.container{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:40px;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-}
 
