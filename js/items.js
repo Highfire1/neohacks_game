@@ -111,38 +111,85 @@ let items = {
 }
 
 
-// todo make time / other things required in this 
+// FYI: the syntax is kinda funky
+// after every item, put a number in seconds, that number is the amount of delay required before the item can be put in
+// use -1 if you don't want a delay
 let recipes = {
-    "magicFuel" : [items.waterDrop, items.daisyPetal, items.stir],
-    "newtEye" : [items.catHair, items.eagleTalons, items.pinecone],
-    "phoenixTear" : [items.crowFeather, items.tarDash, items.waterDrop],
-    "nightlock" : [items.mushroom, items.daisyPetal, items.adderTongue],
+    "waterDrop" : [items.waterDrop, -1, items.waterDrop, -1, items.stir, -10],
+    //"magicFuel" : [items.waterDrop, -1, items.daisyPetal, -1, items.stir],
+    //"newtEye" : [items.catHair, items.eagleTalons, items.pinecone],
+    //"phoenixTear" : [items.crowFeather, items.tarDash, items.waterDrop],
+    //"nightlock" : [items.mushroom, items.daisyPetal, items.adderTongue],
 }
+
+
 
 // used to check if recipes exist in the cauldron
 function lookForRecipe(cauldron_array) {
     console.log("looking for recipe")
     console.log(cauldron_array)
 
-    // if we don't want order to matter, add a .sort() around here
-    // if we want to add some time-based mechanic, this will need some rework
+    let cauldronLength = cauldron_array.length // apparently calling .length is inefficient
 
-    for (const [key, value] of Object.entries(recipes)) {
-        // key is e.g. "magicFuel"
-        // value is e.g. [items.eyeOfNewt, items.batWing]
+    if (cauldronLength == 2) {
+        // no recipes with only one ingredient
+        return
+    }
 
-        if (arraysEqual(value, cauldron_array)) {
+    let lastDate = cauldron_array[1] // get first date
+
+    // iterate through every recipe
+    for (const [recipename, recipe] of Object.entries(recipes)) {
+
+        for (let i = 0; i < cauldronLength; i++) {
+
+            if (i > recipe.length || cauldronLength > recipe.length) {
+                break // break if cauldron is longer than recipe
+            }
+
+
+            if (i % 2 == 0) {
+                // number is even, check ingredient
+                if(!(cauldron_array[i].name == recipe[i].name)) {
+                    //console.log("Mismatched ingredient, breaking out at index " + i)
+                    break
+                }
+            } else {
+                // check time
+                if (i == 1) {
+                    // skip check if is the first time
+                    lastDate = cauldron_array[i]
+                } else {
+                    let timeDifference = cauldron_array[i] - lastDate
+                    lastDate = cauldron_array[i]
+
+                    // 5 seconds is hardcoded, for now
+                    let maxtime = recipe[i] + 5
+                    let mintime = recipe[i] - 5
+
+                    if (recipe[i] == -1) {
+                        // time not a factor in the recipe
+                    } else if (timeDifference < maxtime && timeDifference > mintime) {
+                        // time is within factor
+                    } else {
+                        // time is incorrect
+                        //console.log("Time incorrect, breaking out of recipe")
+                        break // break out of recipe
+                    }
+                }
+            }
             
-            console.log("recipe detected!")
+            // if all checks finish and cauldron length is correct then create recipe
+            if (cauldronLength == recipe.length && cauldronLength - 1 == i){
 
-            // add more infrastructure + graphics here once they exist
-            
-            // empty the cauldron
-            clearCauldron()
-            // add the recipe item
-            items[key].count += 1
-
-            return key;
+                // TODO add graphics here
+                console.log(recipename + " created!!!")
+                
+                items[recipename].count += 1
+                clearCauldron()
+                return recipename
+            } 
+            // add check here to return potential recipes (?)
         }
     }
 }
@@ -165,7 +212,8 @@ function addToCauldron(item) {
     }
     
     cauldron.push(items[item])
-    cauldron.push(new Date())
+    let unixTime = new Date().getTime() / 1000
+    cauldron.push(unixTime)
 
     lookForRecipe(cauldron)
 
