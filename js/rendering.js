@@ -19,11 +19,11 @@ function displayItem(item) {
 
     const txtnode = document.createElement("div")
     txtnode.classList.add("bottom-right")
-
-    if (!(items[item].count == Number.MAX_SAFE_INTEGER)) {
-        txtnode.textContent = items[item].count
-    } else {
+    
+    if (items[item].infinite) {
         txtnode.textContent = "∞"
+    } else {
+        txtnode.textContent = items[item].count
     }
 
     // add to html

@@ -71,25 +71,49 @@ let items = {
         image : "tongueofadder.png",
         count : 0,
     },
-    
-    "waterDrop" : {
-        name : "Drop of Water",
-        image : "waterdrop.png",
-        count : Number.MAX_SAFE_INTEGER,
-    },
 
     "magicFuel" : {
         name : "Magic Fuel",
         image : "",
         count : 0
-    }
+    },
 
     // add more items here
 
-  };
+    // infinite items
+    "stir" : {
+        name : "Ladle",
+        description : "stir the cauldron",
+        image : "",
+        infinite : true,
+        count : Number.MAX_SAFE_INTEGER
+    },
+    "strain" : {
+        name : "Strainer",
+        description : "strain the contents of your cauldron",
+        image : "",
+        infinite : true,
+        count : Number.MAX_SAFE_INTEGER
+    },
+    "evaporate" : {
+        name : "Turn up the heat",
+        description : "description text",
+        image : "",
+        infinite : true,
+        count : Number.MAX_SAFE_INTEGER
+    },
+    "waterDrop" : {
+        name : "Drop of Water",
+        image : "waterdrop.png",
+        infinite : true,
+        count : Number.MAX_SAFE_INTEGER
+    },
+}
+
 
 // todo make time / other things required in this 
 let recipes = {
+    "magicFuel" : [items.waterDrop, items.daisyPetal, items.stir],
     "newtEye" : [items.catHair, items.eagleTalons, items.pinecone],
     "phoenixTear" : [items.crowFeather, items.tarDash, items.waterDrop],
     "nightlock" : [items.mushroom, items.daisyPetal, items.adderTongue],
@@ -97,6 +121,8 @@ let recipes = {
 
 // used to check if recipes exist in the cauldron
 function lookForRecipe(cauldron_array) {
+    console.log("looking for recipe")
+    console.log(cauldron_array)
 
     // if we don't want order to matter, add a .sort() around here
     // if we want to add some time-based mechanic, this will need some rework
@@ -133,7 +159,7 @@ function addToCauldron(item) {
     }
 
     // remove item / update item count
-    if (!(items[item].count == Number.MAX_SAFE_INTEGER)) {
+    if (!items[item].infinite) {
         items[item].count -= 1
         items[item].txtnode.textContent = items[item].count
     }
