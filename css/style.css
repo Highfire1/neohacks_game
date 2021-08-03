@@ -53,6 +53,7 @@ body {
   position: absolute;
   bottom: 8px;
   right: 16px;
+  pointer-events: none; /* makes clicks on text go to the image */
 }
 
 /*grid design*/
