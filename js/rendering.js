@@ -15,11 +15,11 @@ function displayItem(item) {
     
     // sizing
     imgnode.style.width = "100%"
-    imgnode.style.height = "75%"
+    imgnode.style.height = "100%"
 
     const txtnode = document.createElement("div")
     txtnode.classList.add("bottom-right")
-    
+
     if (items[item].infinite) {
         txtnode.textContent = "∞"
     } else {
@@ -35,19 +35,22 @@ function displayItem(item) {
 }
 
 // a wrapper for displayItem
-// I don't know if this is useful as it will only make rows, not columns
-// also not tested but I can clean it up if we need it
 function displayItemWrapper(obj) {
+
     let parentnode = document.currentScript.parentNode
 
     for (const [key, value] of Object.entries(obj)) {
-        const itemnode = document.createElement("item")
-        const scriptnode = document.createElement("script")
+        console.log("rendering item: " + key )
 
-        itemnode.appendChild(scriptnode)
+        const wrappernode = document.createElement("div")
+        wrappernode.setAttribute("class", "container")
+
+        const scriptnode = document.createElement("script")
+        scriptnode.textContent = "displayItem(\""+ key + "\")"
+
+        wrappernode.appendChild(scriptnode)
         // no clue if this works or not
-        scriptnode.setAttribute(displayItem(key))
-        
-        parentnode.appendChild(itemnode)
+
+        parentnode.appendChild(wrappernode)
     }
 }
