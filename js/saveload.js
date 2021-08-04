@@ -24,5 +24,8 @@ function clearData() {
     localStorage.removeItem("dialoguetracker")
     localStorage.removeItem("audioinfo")
 
+
     location.reload(); // reload page
+    window.location.href = "index.html";
+    return;
 }
