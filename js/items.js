@@ -115,7 +115,7 @@ let items = {
 // after every item, put a number in seconds, that number is the amount of delay required before the item can be put in
 // use -1 if you don't want a delay
 let recipes = {
-    "waterDrop" : [items.waterDrop, -1, items.waterDrop, -1, items.stir, -10],
+    "waterDrop" : [items.waterDrop, -1, items.waterDrop, -1, items.stir, -1],
     //"magicFuel" : [items.waterDrop, -1, items.daisyPetal, -1, items.stir],
     //"newtEye" : [items.catHair, items.eagleTalons, items.pinecone],
     //"phoenixTear" : [items.crowFeather, items.tarDash, items.waterDrop],
@@ -183,7 +183,7 @@ function lookForRecipe(cauldron_array) {
             if (cauldronLength == recipe.length && cauldronLength - 1 == i){
 
                 // TODO add graphics here
-                console.log(recipename + " created!!!")
+                console.log(items[recipename].name + " created!")
                 
                 items[recipename].count += 1
                 clearCauldron()
