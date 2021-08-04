@@ -2,27 +2,26 @@
 // credit https://www.freepik.com/free-vector/luxury-old-library-interior-night-dark-empty-room-reading-with-books-wooden-shelves_9396114.htm somewhere
 
 
-// setup cauldron array
+// setup cauldron array & 
 let cauldron = []
-let dialoguetracker = 1
-
-console.log(audioInfo)
+let dialoguetracker = "introdialogue"
 
 if (localStorage.getItem("datasaved") === null) {
     console.log("Save data not found, generating save template")
+    // cauldron and dialoguetracker are declared here while items, audioinfo & datasaved are declared elsewhere
     saveEverything()
 }
 
 loadEverything()
 
-if (dialoguetracker == 1) {
+if (dialoguetracker == "introdialogue") {
     window.location.href = "dialogue.html";
 }
 
-initializeAudio()
 
 // game loop
 // is called once every frame
+
 // requestAnimationFrame(gameLoop)
 
 function gameLoop(timestamp) {

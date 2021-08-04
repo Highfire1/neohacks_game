@@ -13,6 +13,8 @@ function loadEverything() {
     cauldron = JSON.parse(localStorage.getItem("cauldron"))
     dialoguetracker = JSON.parse(localStorage.getItem("dialoguetracker"))
     audioInfo = JSON.parse(localStorage.getItem("audioinfo"))
+
+    initializeAudio()
 }
 
 function clearData() {
