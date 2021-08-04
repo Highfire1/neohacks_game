@@ -8,67 +8,67 @@ let items = {
     
     "catHair" : {
         name : "Hair of Cat",
-        image : "error.png",
+        image : "cathair.png",
         count : 0,
     },
     
     "crowFeather" : {
         name : "Feather of Crow",
-        image : "error.png",
+        image : "crowfeather.png",
         count : 5
     },
     
     "daisyPetal" : {
         name : "Petals of Daisy",
-        image : "error.png",
+        image : "daisy.png",
         count : 5,
     },
     
     "eagleTalons" : {
         name : "Talons of Eagle",
-        image : "error.png",
+        image : "eagletalons.png",
         count : 5,
     },
     
     "newtEye" : {
         name : "Eye of Newt",
-        image : "error.png",
+        image : "eyeofnewt.png",
         count : 0,
     },
     
     "mushroom" : {
         name : "Mushrooms",
-        image : "error.png",
+        image : "mushroom.png",
         count : 0,
     },
     
-    "nightlock" : {
-        name : "Berries of Nightlock",
-        image : "error.png",
+    "blueberries" : {
+        name : "Blueberries",
+        image : "nightlock.png",
         count : 0,
     },
     
     "pinecone" : {
         name : "Pinecone",
-        image : "error.png",
+        image : "pinecone.png",
         count : 0,
     },
     
     "phoenixTear" : {
         name : "Tear of Phoenix",
-        image : "error.png",
+        image : "phoenixtear.png",
         count : 0,
     },
     
     "tarDash" : {
         name : "Dash of Tar",
-        image : "error.png",
+        image : "tardrop.png",
         count : 0,
     },
     
     "adderTongue" : {
         name : "Tongue of Adder",
-        image : "error.png",
+        image : "tongueofadder.png",
         count : 0,
     },
 
