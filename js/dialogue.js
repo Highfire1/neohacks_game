@@ -116,3 +116,5 @@ function editDialogue() {
     
     dialoguenum += 1
 }
+
+initializeAudio()

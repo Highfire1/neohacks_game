@@ -1,8 +1,37 @@
-function startAudio() {
-    var audio = new Audio('assets/possession.mp3');
-    audio.play();
+var audio;
+
+let audioInfo = {
+    "state" : false,
+    "currentTrack" : "possession.mp3",
+    "trackTime" : 0,
+    "audioPromise" : false
+}
+
+function initializeAudio() {
+    audio = new Audio('assets/' + audioInfo.currentTrack);
+    audio.currentTime = audioInfo.trackTime 
+    
+    if (audioInfo.audioPromise && audioInfo.state) {
+        audio.play()
+    }
 }
 
 function toggleAudio() {
-    pass
+    audioInfo.state = !audioInfo.state
+    saveAudioInformation() 
+
+    if (audioInfo.state) {
+        audio.play()
+    } else {
+        audio.pause()
+    }
 }
+
+function saveAudioInformation() {
+    if (audio === null || typeof audio == "undefined" ) {
+        return
+    }
+    audioInfo.trackTime = audio.currentTime
+}
+
+// TODO: implement multiple tracks
