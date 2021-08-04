@@ -88,13 +88,6 @@ let items = {
         infinite : true,
         count : Number.MAX_SAFE_INTEGER
     },
-    "strain" : {
-        name : "Strainer",
-        description : "strain the contents of your cauldron",
-        image : "error.png",
-        infinite : true,
-        count : Number.MAX_SAFE_INTEGER
-    },
     "evaporate" : {
         name : "Turn up the heat",
         description : "description text",
