@@ -191,7 +191,7 @@ function introdialogue() {
 var starttime
  
 // TODO: make this actually useful
-
+// see http://www.javascriptkit.com/javatutors/requestanimationframe.shtml for info
 function moveit(timestamp, element, dist, duration){
     //if browser doesn't support requestAnimationFrame, generate our own timestamp using Date:
     var timestamp = timestamp 
