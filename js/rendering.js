@@ -9,15 +9,18 @@ function displayItem(item) {
     const imgnode = document.createElement("img")
     imgnode.src = "assets/" + items[item].image
     imgnode.alt = items[item].name
+    imgnode.title = items[item].name
 
-    // adds listener to button so it calls addToCauldron when its clicked
-    imgnode.addEventListener("click", function(){addToCauldron(item)} )
+    // TODO : implement drag/drop to cauldron
+    imgnode.setAttribute("draggable", "true")
     
     // sizing
     imgnode.style.width = "100%"
     imgnode.style.height = "100%"
 
+    // create number text
     const txtnode = document.createElement("div")
+    txtnode.setAttribute("id", item + "txtnode")
     txtnode.classList.add("bottom-right")
 
     if (items[item].infinite) {
@@ -27,11 +30,14 @@ function displayItem(item) {
     }
 
     // add to html
-    document.currentScript.parentNode.appendChild(imgnode)
-    document.currentScript.parentNode.appendChild(txtnode)
+    let parnode = document.currentScript.parentNode
+    parnode.appendChild(imgnode)
+    parnode.appendChild(txtnode)
 
-    // CHANGE THIS NUMBER IF MORE CHILDS ARE ADDED
-    items[item].txtnode = document.currentScript.parentNode.children[2]
+    // deprecated: will be replaced with drag/drop
+    parnode.addEventListener("click", function(){addToCauldron(item)} )
+
+    items[item].txtnode = document.getElementById(item + "txtnode")
 }
 
 // a wrapper for displayItem
