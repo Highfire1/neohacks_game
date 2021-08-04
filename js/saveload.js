@@ -1,4 +1,4 @@
-// save everything useful to localStorage  
+// save everything useful to localStorage 
 function saveEverything() {
     localStorage.setItem("datasaved", true)
     localStorage.setItem("items", JSON.stringify(items))
