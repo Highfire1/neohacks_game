@@ -54,6 +54,7 @@ body {
   bottom: 8px;
   right: 16px;
   pointer-events: none; /* makes clicks on text go to the image */
+  /* user-select: none; */  /* makes text non selectable */
 }
 
 /*grid design*/
