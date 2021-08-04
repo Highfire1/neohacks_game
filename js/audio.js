@@ -1,3 +1,6 @@
+// audio will completely break if you go to other pages because chrome is annoying
+// don't really know what to do about that
+
 var audio;
 
 let audioInfo = {
@@ -10,6 +13,7 @@ let audioInfo = {
 function initializeAudio() {
     audio = new Audio('assets/' + audioInfo.currentTrack);
     audio.currentTime = audioInfo.trackTime 
+    audio.loop = true // until multiple tracks is implemented
     
     if (audioInfo.audioPromise && audioInfo.state) {
         audio.play()
@@ -34,5 +38,6 @@ function saveAudioInformation() {
     }
     audioInfo.trackTime = audio.currentTime
 }
+
 
 // TODO: implement multiple tracks
