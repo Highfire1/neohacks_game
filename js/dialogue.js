@@ -1,6 +1,46 @@
 let strings = {
+
+    "introdialogue" : {
+        "onInitialize" : "console.log('running initialization code')",
+        "text" : [
+            ["???", "Once upon a time in a far away land,"],
+            ["???", "There lived a witch named Celestina."],
+            ["???", "She lived with her pet bat, Ambrose."],
+            ["???", "And she brewed potions for a living."],
+            ["???", "One day as she was brewing a potion, a current of magical wind flew in through the window!", "console.log('halfway through dialogue!')"],
+            ["???", "And the wind whisked Ambrose away!"],
+            ["Celestina", "AAAAAAAAAAAAAAAAAAAAA"],
+            ["Celestina", "Ambrose!"],
+            ["???", "Celestina rushed out and searched for hours but Ambrose was nowhere to be found."],
+            ["Celestina", "time to do potion brewing xd haha :D"],
+        ]
+    },
+
+    "meetIvo" : {
+        "onInitialize" : "",
+        "text" : [
+            ["Farmer Ivo", "Celestina, long time no see!"],
+            ["Celestina", "Farmer Ivo, it's terrible "],
+            ["Farmer Ivo", "Vaht happened?"],
+            ["Celestina", "Ambrose is gone!"],
+            ["Farmer Ivo", "My condolences"],
+            ["Celestina", "!!!"],
+            ["Celestina", "Oh no, Ambrose isn't dead."],
+            ["Celestina", "I'm sure he's having the time of his life!"],
+            ["Celestina", "But I need him to make my potions!"],
+            ["Celestina", "Farmer Ivo, surely you can help! I need some plants from your field."],
+            ["Farmer Ivo", "I'm afraid your out of luck."], // MAKE RUSSIAN
+            ["Farmer Ivo", "PUZZLE EXPLANATION"],
+        ]
+    },
+
+}
+
+
+
+let stringsbad = {
     // intro sequence
-    1 : [
+    "introdialogue" : [
         ["???", "Once upon a time in a far away land,"],
         ["???", "There lived a witch named Celestina."],
         ["???", "She lived with her pet bat, Ambrose."],
@@ -82,24 +122,40 @@ let strings = {
     ]
 } 
 
+var dialoguetracker
 loadEverything()
-
-initializeAudio()
-
 let dialoguenum = 0
-dialoguetracker = JSON.parse(localStorage.getItem("dialoguetracker"))
 
 
-function editDialogue() {
+function advanceDialogue() {
 
-    if(dialoguenum == strings[dialoguetracker].length) {
+    if(dialoguenum == strings[dialoguetracker].text.length) {
         dialoguetracker += 1
         saveEverything()
         window.location.href = "index.html";
         return;
     }
+    
 
-    document.getElementById("dialogueText").textContent = strings[dialoguetracker][dialoguenum][1]    
+    let currentDialogue = strings[dialoguetracker].text[dialoguenum]
+
+    document.getElementById("dialogueText").textContent = currentDialogue[1]
+
+    // run code of dialogue entry
+    if (typeof currentDialogue[2] != 'undefined') {
+        eval(currentDialogue[2])
+    }
+
+    // increment dialogue entry tracker
     dialoguenum += 1
 }
 
+function loadDialogue() {
+
+    // run initialization for dialogue
+    if (strings[dialoguetracker].onInitialize.length != 0) {
+        eval(strings[dialoguetracker].onInitialize)
+    }
+
+    advanceDialogue()
+}
