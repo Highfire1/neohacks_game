@@ -80,11 +80,11 @@ let strings = {
     20 : [
 
     ]
-
-
-
-
 } 
+
+loadEverything()
+
+initializeAudio()
 
 let dialoguenum = 0
 dialoguetracker = JSON.parse(localStorage.getItem("dialoguetracker"))
@@ -92,29 +92,14 @@ dialoguetracker = JSON.parse(localStorage.getItem("dialoguetracker"))
 
 function editDialogue() {
 
-    console.log(dialoguetracker)
-
-    
-
     if(dialoguenum == strings[dialoguetracker].length) {
-        console.log("going back to previous location")
-
         dialoguetracker += 1
-        localStorage.setItem("dialoguetracker", JSON.stringify(dialoguetracker))
-        
-        console.log("saved dialoguetracker as " + dialoguetracker)
+        saveEverything()
         window.location.href = "index.html";
         return;
-
     }
 
-    
-
-    //console.log(document.getElementById("dialogueText"))
-
-    document.getElementById("dialogueText").textContent = strings[dialoguetracker][dialoguenum][1]
-    
+    document.getElementById("dialogueText").textContent = strings[dialoguetracker][dialoguenum][1]    
     dialoguenum += 1
 }
 
-initializeAudio()

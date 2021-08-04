@@ -22,6 +22,7 @@ function toggleAudio() {
 
     if (audioInfo.state) {
         audio.play()
+        audioInfo.audioPromise = true
     } else {
         audio.pause()
     }
