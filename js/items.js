@@ -123,6 +123,7 @@ let recipes = {
 }
 
 
+// actually, it might be cool if the cauldron automatically changed color if no recipe is found but god knows how to implement that
 
 // used to check if recipes exist in the cauldron
 function lookForRecipe(cauldron_array) {
