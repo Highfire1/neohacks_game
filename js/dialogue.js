@@ -1,14 +1,14 @@
 let strings = {
 
     "introdialogue" : {
-        "onInitialize" : "console.log('running initialization code')",
+        "onInitialize" : "console.log('running initialization code'); introdialogue()",
         "text" : [
             ["???", "Once upon a time in a far away land,"],
             ["???", "There lived a witch named Celestina."],
             ["???", "She lived with her pet bat, Ambrose."],
             ["???", "And she brewed potions for a living."],
             ["???", "One day as she was brewing a potion, a current of magical wind flew in through the window!", "console.log('halfway through dialogue!')"],
-            ["???", "And the wind whisked Ambrose away!"],
+            ["???", "And the wind whisked Ambrose away!", "yeetAmbrose()"],
             ["Celestina", "AAAAAAAAAAAAAAAAAAAAA"],
             ["Celestina", "Ambrose!"],
             ["???", "Celestina rushed out and searched for hours but Ambrose was nowhere to be found."],
@@ -130,7 +130,7 @@ let dialoguenum = 0
 function advanceDialogue() {
 
     if(dialoguenum == strings[dialoguetracker].text.length) {
-        dialoguetracker += 1
+        dialoguetracker = null
         saveEverything()
         window.location.href = "index.html";
         return;
@@ -151,6 +151,7 @@ function advanceDialogue() {
 }
 
 function loadDialogue() {
+    console.log("Initializing dialogue...")
 
     // run initialization for dialogue
     if (strings[dialoguetracker].onInitialize.length != 0) {
@@ -158,4 +159,57 @@ function loadDialogue() {
     }
 
     advanceDialogue()
+}
+
+// === CUSTOM FUNCTIONS BELOW ===
+let dialogueScene = document.getElementById("dialogueScene")
+
+
+function introdialogue() {
+    // the below is equivalent to doing this
+    // <img id="witch" src="assets/witch.png" alt="image of a witch">
+    // <img class="ambrose" src="assets/bat.png" alt="image of a bat"></img>
+
+    let celestina = document.createElement("img")
+    celestina.setAttribute("id", "witch")
+    celestina.setAttribute("src", "assets/witch.png")
+    celestina.setAttribute("alt", "image of a cute witch :)")
+
+    let ambrose = document.createElement("img")
+    ambrose.setAttribute("class", "ambrose")
+    ambrose.setAttribute("src", "assets/bat.png")
+    ambrose.setAttribute("alt", "image of a bat")
+    ambrose.setAttribute("id", "ambrose")
+
+    dialogueScene.appendChild(celestina)
+    dialogueScene.appendChild(ambrose)
+}
+
+
+
+// === HELPER FUNCTIONS
+var starttime
+ 
+// TODO: make this actually useful
+
+function moveit(timestamp, element, dist, duration){
+    //if browser doesn't support requestAnimationFrame, generate our own timestamp using Date:
+    var timestamp = timestamp 
+    var runtime = timestamp - starttime
+    var progress = runtime / duration
+
+    progress = Math.min(progress, 1)
+    element.style.left = (dist * progress).toFixed(2) + 'px'
+    if (runtime < duration){ // if duration not met yet
+        requestAnimationFrame(function(timestamp){ // call requestAnimationFrame again with parameters
+            moveit(timestamp, element, dist, duration)
+        })
+    }
+}
+
+function yeetAmbrose() {
+    requestAnimationFrame(function(timestamp){
+        starttime = timestamp 
+        moveit(timestamp, document.getElementById('ambrose'), 400, 4000) // 400px over 1 second
+    })
 }

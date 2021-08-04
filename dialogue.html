@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US" id="bkrd2">>
 
-<!-- dialogue js -->
-<script src="js/audio.js"></script>
-<script src="js/saveload.js"></script>
-<script src="js/dialogue.js"></script>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,29 +10,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!--Font-->
     <!-- Something here is making a black ">" in the top right of the background...-->
-    <id="bkrd2"link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <id="bkrd2" link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div>      
 
-
     <dialog open id="dialogue" onclick="advanceDialogue()"> 
       <p>
-        <q id = "dialogueText">...</q>
-        <script>loadDialogue()</script>
+        <q id = "dialogueText"></q>
       </p>
     </dialog>
 
-    <!--TODO: make this dynamic-->
-    <!--first scene where ambrose flys away-->
-    <div>
-      <img id="witch" src="assets/witch.png" alt="image of a witch">
-      <img class="ambrose" src="assets/bat.png" alt="image of a bat">
+    <div id = "dialogueScene">
     </div>
+
   </div>
-  
 </body>
 
 </html>
+
+
+<!-- Initialize js -->
+<script src="js/audio.js"></script>
+<script src="js/saveload.js"></script>
+<script src="js/dialogue.js"></script>
+
+<!--Initialize dialogue after everything else has completed loading-->
+<script>loadDialogue()</script>
