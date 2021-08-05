@@ -108,7 +108,7 @@ let items = {
 // after every item, put a number in seconds, that number is the amount of delay required before the item can be put in
 // use -1 if you don't want a delay
 let recipes = {
-    "waterDrop" : [items.waterDrop, -1, items.waterDrop, -1, items.stir, -1],
+    "magicFuel" : [items.waterDrop, -1, items.waterDrop, -1, items.stir, -1],
     //"magicFuel" : [items.waterDrop, -1, items.daisyPetal, -1, items.stir],
     //"newtEye" : [items.catHair, items.eagleTalons, items.pinecone],
     //"phoenixTear" : [items.crowFeather, items.tarDash, items.waterDrop],
@@ -178,7 +178,7 @@ function lookForRecipe(cauldron_array) {
                 // TODO add graphics here
                 console.log(items[recipename].name + " created!")
                 
-                items[recipename].count += 1
+                addItem(recipename)
                 clearCauldron()
                 return recipename
             } 
@@ -203,8 +203,7 @@ function addToCauldron(item) {
 
     // remove item / update item count
     if (!items[item].infinite) {
-        items[item].count -= 1
-        items[item].txtnode.textContent = items[item].count
+        substractItem(item)
     }
     
     cauldron.push(items[item])
@@ -230,4 +229,14 @@ function setCauldronState(state) {
     } else if (state == "default") {
         cauldron.src = "assets/cauldron.png"
     }
+}
+
+function addItem(item) {
+    items[item].count += 1
+    document.getElementById(item + "txtnode").textContent = items[item].count
+}
+
+function substractItem(item) {
+    items[item].count -= 1
+    document.getElementById(item + "txtnode").textContent = items[item].count
 }

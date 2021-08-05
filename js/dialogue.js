@@ -111,7 +111,7 @@ function advanceDialogue() {
 
     let currentDialogue = strings[dialoguetracker].text[dialoguenum]
 
-    document.getElementById("dialogueText").textContent = currentDialogue[1]
+    document.getElementById("dialogueText").textContent = currentDialogue[0] + ": " + currentDialogue[1]
 
     // run code of dialogue entry
     if (typeof currentDialogue[2] != 'undefined') {
