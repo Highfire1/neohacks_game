@@ -104,7 +104,7 @@ let items = {
 }
 
 
-// FYI: the syntax is kinda funky
+// FYI: the recipe syntax is kinda funky
 // after every item, put a number in seconds, that number is the amount of delay required before the item can be put in
 // use -1 if you don't want a delay
 let recipes = {
@@ -125,12 +125,8 @@ function lookForRecipe(cauldron_array) {
 
     let cauldronLength = cauldron_array.length // apparently calling .length is inefficient
 
-    if (cauldronLength == 2) {
-        // no recipes with only one ingredient
-        return
-    }
-
     let lastDate = cauldron_array[1] // get first date
+    let potentialRecipes = Object.keys(recipes).length
 
     // iterate through every recipe
     for (const [recipename, recipe] of Object.entries(recipes)) {
@@ -138,6 +134,7 @@ function lookForRecipe(cauldron_array) {
         for (let i = 0; i < cauldronLength; i++) {
 
             if (i > recipe.length || cauldronLength > recipe.length) {
+                potentialRecipes -= 1
                 break // break if cauldron is longer than recipe
             }
 
@@ -146,6 +143,7 @@ function lookForRecipe(cauldron_array) {
                 // number is even, check ingredient
                 if(!(cauldron_array[i].name == recipe[i].name)) {
                     //console.log("Mismatched ingredient, breaking out at index " + i)
+                    potentialRecipes -= 1
                     break
                 }
             } else {
@@ -168,6 +166,7 @@ function lookForRecipe(cauldron_array) {
                     } else {
                         // time is incorrect
                         //console.log("Time incorrect, breaking out of recipe")
+                        potentialRecipes -= 1
                         break // break out of recipe
                     }
                 }
@@ -183,8 +182,11 @@ function lookForRecipe(cauldron_array) {
                 clearCauldron()
                 return recipename
             } 
-            // add check here to return potential recipes (?)
         }
+    }
+
+    if(potentialRecipes == 0) {
+        setCauldronState("ruined")
     }
 }
 
@@ -216,12 +218,16 @@ function addToCauldron(item) {
 
 function clearCauldron() {
     cauldron = []
+    setCauldronState("default")
     saveEverything()
 }
 
+function setCauldronState(state) {
+    let cauldron = document.getElementById("cauldron")
 
-// from stackoverflow
-// check if two objects are the same
-function arraysEqual(a, b) {
-    return JSON.stringify(a) === JSON.stringify(b)
-  }
+    if (state == "ruined") {
+        cauldron.src = "assets/ruinedcauldron.png"
+    } else if (state == "default") {
+        cauldron.src = "assets/cauldron.png"
+    }
+}

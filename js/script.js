@@ -13,6 +13,7 @@ if (localStorage.getItem("datasaved") === null) {
 }
 
 loadEverything()
+lookForRecipe(cauldron)
 
 if (dialoguetracker == "introdialogue") {
     window.location.href = "dialogue.html";
