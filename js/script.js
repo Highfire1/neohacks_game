@@ -18,10 +18,6 @@ lookForRecipe(cauldron)
 
 displayItemWrapper(items, document.getElementById("ingredientGrid"))
 
-if (dialoguetracker == "introdialogue") {
-    window.location.href = "dialogue.html";
-}
-
 
 // game loop
 // is called once every frame
@@ -32,3 +28,23 @@ function gameLoop(timestamp) {
     console.log("mainloop called")
     requestAnimationFrame(gameLoop)
 }
+
+function lookForDialogue(created_item) {
+    // intro scene
+    if (dialoguetracker == "introdialogue") {
+        goToDialogue(dialoguetracker)
+    }
+
+    // example scene
+    if(created_item == "magicFuel" && items.magicFuel.count == 1) {
+        goToDialogue("exampleDialogue")
+    }
+}
+
+function goToDialogue(dialogue) {
+    dialoguetracker = dialogue
+    saveEverything()
+    window.location.href = "dialogue.html";
+}
+
+lookForDialogue()

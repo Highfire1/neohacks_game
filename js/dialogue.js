@@ -2,6 +2,7 @@ let strings = {
 
     "introdialogue" : {
         "onInitialize" : "console.log('running initialization code'); introdialogue()",
+        "accessed" : 0,
         "text" : [
             ["???", "Once upon a time in a far away land,"],
             ["???", "There lived a witch named Celestina."],
@@ -12,12 +13,13 @@ let strings = {
             ["Celestina", "AAAAAAAAAAAAAAAAAAAAA"],
             ["Celestina", "Ambrose!"],
             ["???", "Celestina rushed out and searched for hours but Ambrose was nowhere to be found."],
-            ["Celestina", "time to do potion brewing xd haha :D"],
+            ["Celestina", "Now, I need to make magic fuel for a definitely plot related reason, in case i forgot my recipe i just put WATER and DAISY PETALS into my cauldron then STIR"],
         ]
     },
 
     "meetIvo" : {
         "onInitialize" : "",
+        "accessed" : 0,
         "text" : [
             ["Farmer Ivo", "Celestina, long time no see!"],
             ["Celestina", "Farmer Ivo, it's terrible "],
@@ -33,6 +35,14 @@ let strings = {
             ["Farmer Ivo", "PUZZLE EXPLANATION"],
         ]
     },
+
+    "exampleDialogue" : {
+        "onInitialize" : "",
+        "accessed" : 0,
+        "text" : [
+            ["Celestina", "Yay i now have magic fuel!"]
+        ]
+    }
 
 }
 
@@ -99,6 +109,17 @@ loadEverything()
 let dialoguenum = 0
 
 
+function loadDialogue() {
+    console.log("Initializing dialogue...")
+
+    // run initialization for dialogue
+    if (strings[dialoguetracker].onInitialize.length != 0) {
+        eval(strings[dialoguetracker].onInitialize)
+    }
+
+    advanceDialogue()
+}
+
 function advanceDialogue() {
 
     if(dialoguenum == strings[dialoguetracker].text.length) {
@@ -120,17 +141,6 @@ function advanceDialogue() {
 
     // increment dialogue entry tracker
     dialoguenum += 1
-}
-
-function loadDialogue() {
-    console.log("Initializing dialogue...")
-
-    // run initialization for dialogue
-    if (strings[dialoguetracker].onInitialize.length != 0) {
-        eval(strings[dialoguetracker].onInitialize)
-    }
-
-    advanceDialogue()
 }
 
 // === CUSTOM FUNCTIONS BELOW ===
@@ -171,7 +181,7 @@ function moveit(timestamp, element, dist, duration){
     var progress = runtime / duration
 
     progress = Math.min(progress, 1)
-    element.style.left = (dist * progress).toFixed(2) + 'px'
+    element.style.right = (dist * progress).toFixed(2) + 'px'
     if (runtime < duration){ // if duration not met yet
         requestAnimationFrame(function(timestamp){ // call requestAnimationFrame again with parameters
             moveit(timestamp, element, dist, duration)
@@ -182,6 +192,6 @@ function moveit(timestamp, element, dist, duration){
 function yeetAmbrose() {
     requestAnimationFrame(function(timestamp){
         starttime = timestamp 
-        moveit(timestamp, document.getElementById('ambrose'), 400, 4000) // 400px over 1 second
+        moveit(timestamp, document.getElementById('ambrose'), screen.width, 4000) // 400px over 1 second
     })
 }
