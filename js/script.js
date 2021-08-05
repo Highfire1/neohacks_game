@@ -15,6 +15,9 @@ if (localStorage.getItem("datasaved") === null) {
 loadEverything()
 lookForRecipe(cauldron)
 
+
+displayItemWrapper(items, document.getElementById("ingredientGrid"))
+
 if (dialoguetracker == "introdialogue") {
     window.location.href = "dialogue.html";
 }

@@ -41,9 +41,7 @@ function displayItem(item) {
 }
 
 // a wrapper for displayItem
-function displayItemWrapper(obj) {
-
-    let parentnode = document.currentScript.parentNode
+function displayItemWrapper(obj, parentnode) {
 
     for (let key in obj) {
 

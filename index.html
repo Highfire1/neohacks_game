@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<!-- JS Initialization -->
-<script src="js/saveload.js"></script>
-<script src="js/items.js"></script>
-<script src="js/rendering.js"></script>
-<script src="js/audio.js"></script>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,10 +18,9 @@
     <div id="container">
       <div id="ingreds">
         <h1>Ingredients</h1>
-        <!-- displayItem() puts a Image & Button into the node its enclosed in, feel free to change the grid up so it looks nice and matches to backdrop -->
 
-        <div class="grid">
-            <script>displayItemWrapper(items)</script>
+        <div class="grid" id="ingredientGrid">
+          <!-- grid is filled in by JS-->
         </div>
         
       </div>
@@ -48,6 +41,13 @@
 <button type="button" onclick="toggleAudio()">toggle audio</button>
 <button type="button" onclick="clearData()">[debug]clear game data</button>
 <button type="button" onclick="clearCauldron()">empty cauldron</button>
+
+
+<!-- JS Initialization -->
+<script src="js/saveload.js"></script>
+<script src="js/items.js"></script>
+<script src="js/rendering.js"></script>
+<script src="js/audio.js"></script>
 
 <!-- Main JS function -->
 <script src="js/script.js"> </script>
