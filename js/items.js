@@ -21,7 +21,7 @@ let items = {
     "daisyPetal" : {
         name : "Petals of Daisy",
         image : "daisy.png",
-        count : 5,
+        count : 10,
     },
     
     "eagleTalons" : {
@@ -74,7 +74,7 @@ let items = {
 
     "magicFuel" : {
         name : "Magic Fuel",
-        image : "error.png",
+        image : "magicfuel.png",
         count : 0
     },
 
@@ -84,7 +84,7 @@ let items = {
     "stir" : {
         name : "Ladle",
         description : "stir the cauldron",
-        image : "error.png",
+        image : "ladle.png",
         infinite : true,
         count : Number.MAX_SAFE_INTEGER
     },
@@ -96,8 +96,8 @@ let items = {
         count : Number.MAX_SAFE_INTEGER
     },
     "waterDrop" : {
-        name : "Drop of Water",
-        image : "error.png",
+        name : "Water",
+        image : "water.png",
         infinite : true,
         count : Number.MAX_SAFE_INTEGER
     },
@@ -108,7 +108,7 @@ let items = {
 // after every item, put a number in seconds, that number is the amount of delay required before the item can be put in
 // use -1 if you don't want a delay
 let recipes = {
-    "magicFuel" : [items.waterDrop, -1, items.waterDrop, -1, items.stir, -1],
+    "magicFuel" : [items.waterDrop, -1, items.daisyPetal, -1, items.stir, -1],
     //"magicFuel" : [items.waterDrop, -1, items.daisyPetal, -1, items.stir],
     //"newtEye" : [items.catHair, items.eagleTalons, items.pinecone],
     //"phoenixTear" : [items.crowFeather, items.tarDash, items.waterDrop],
@@ -175,12 +175,11 @@ function lookForRecipe(cauldron_array) {
             // if all checks finish and cauldron length is correct then create recipe
             if (cauldronLength == recipe.length && cauldronLength - 1 == i){
 
-                // TODO add graphics here
+                // TODO add graphics as well as a call to an item checker WHEN GRAPHICS FINISH
                 console.log(items[recipename].name + " created!")
                 
-                addItem(recipename)
                 clearCauldron()
-                return recipename
+                addItem(recipename)
             } 
         }
     }
@@ -234,6 +233,8 @@ function setCauldronState(state) {
 function addItem(item) {
     items[item].count += 1
     document.getElementById(item + "txtnode").textContent = items[item].count
+
+    lookForDialogue(item)
 }
 
 function substractItem(item) {
