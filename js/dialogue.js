@@ -112,6 +112,10 @@ let dialoguenum = 0
 function loadDialogue() {
     console.log("Initializing dialogue...")
 
+    if (dialoguetracker === null) {
+        dialoguetracker = "exampleDialogue"
+    }
+
     // run initialization for dialogue
     if (strings[dialoguetracker].onInitialize.length != 0) {
         eval(strings[dialoguetracker].onInitialize)
