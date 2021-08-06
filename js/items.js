@@ -4,6 +4,18 @@
 // recipes stores all the recipes
 // cauldron stores everything in the cauldron
 
+// ideas for more wholesome ideas
+//blueberries
+//lemongrass
+//a bundle of daisies
+//toadstools
+
+// thoughts on mechanics
+// I think it might be less confusing to scrap puzzles and make the cauldron itself a MEGA PUZZLE
+// now that cauldron has infinite components and time, we can have cryptic recipes you need to decipher / figure out to make required stuff
+// thats just my thoughts
+
+
 let items = {
     
     "catHair" : {
