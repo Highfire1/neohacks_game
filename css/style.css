@@ -3,12 +3,11 @@
 }
 body {
   background-image: url('../assets/backgrounds/library.jpg');
-  height: 100%;
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
+
+  /* Scale image properly */
+  background-position: center; 
+  background-attachment: fixed;
+  background-size: cover;  
 }
 
 /*Give anything a border (class)*/
